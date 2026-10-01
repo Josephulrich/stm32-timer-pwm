@@ -63,9 +63,9 @@ A PWM signal periodically switches between a low and a high logic level.
 The duty cycle is the percentage of one period during which the signal
 remains high:
 
-\[
+$$
 D = \frac{CCR}{ARR + 1} \times 100
-\]
+$$
 
 For this project:
 
@@ -77,31 +77,35 @@ CCR       = 500
 
 Therefore, the initial duty cycle is approximately:
 
-\[
+$$
+D = \frac{500}{999 + 1} \times 100
+$$
+
+$$
 D = \frac{500}{1000} \times 100 = 50\%
-\]
+$$
 
 The timer frequency is calculated using:
 
-\[
+$$
 f_{PWM} =
 \frac{f_{TIM1}}
 {(PSC + 1)(ARR + 1)}
-\]
+$$
 
 With a TIM1 timer clock of approximately 64 MHz:
 
-\[
+$$
 f_{PWM} =
 \frac{64\,000\,000}
 {(63 + 1)(999 + 1)}
-\]
+$$
 
-\[
+$$
 f_{PWM} =
 \frac{64\,000\,000}{64\,000}
 = 1\,000\ \text{Hz}
-\]
+$$
 
 The expected output is therefore approximately:
 
@@ -109,7 +113,6 @@ The expected output is therefore approximately:
 PWM frequency: 1 kHz
 Duty cycle:    50%
 ```
-
 ---
 
 ## Clock configuration
